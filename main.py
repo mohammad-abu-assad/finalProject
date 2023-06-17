@@ -75,6 +75,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.select_number_of_nodes_path.currentTextChanged.connect(self.on_select_path)
         self.select_number_of_nodes_ring.currentTextChanged.connect(self.on_select_ring)
         self.my_tab = self.findChild(QtWidgets.QTabWidget, "tabWidget")
+        self.my_tab.setCurrentIndex(0)
         self.ring_topology_btn = self.findChild(QtWidgets.QPushButton, "ring_topology_btn")
         self.path_topology_btn = self.findChild(QtWidgets.QPushButton, "path_topology_btn")
         self.ring_topology_btn.clicked.connect(self.on_ring_topology_btn_clicked)
