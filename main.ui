@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1210</width>
-    <height>882</height>
+    <width>1217</width>
+    <height>889</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="welcome_tab">
        <attribute name="title">
@@ -60,8 +60,8 @@
        <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>290</y>
+          <x>480</x>
+          <y>310</y>
           <width>331</width>
           <height>51</height>
          </rect>
@@ -75,353 +75,390 @@
          </font>
         </property>
         <property name="text">
-         <string>Select topology to start:</string>
+         <string>what you can do?</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="ring_topology_btn">
+       <widget class="QPushButton" name="algorithm_simolution_btn">
         <property name="geometry">
          <rect>
-          <x>470</x>
-          <y>390</y>
-          <width>191</width>
+          <x>90</x>
+          <y>470</y>
+          <width>291</width>
           <height>51</height>
          </rect>
         </property>
         <property name="text">
-         <string>Ring topology</string>
+         <string>Algorithm simulation</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="path_topology_btn">
+       <widget class="QPushButton" name="algorithm_analysis_btn">
         <property name="geometry">
          <rect>
           <x>470</x>
           <y>470</y>
-          <width>191</width>
+          <width>261</width>
           <height>51</height>
          </rect>
         </property>
         <property name="text">
-         <string>Path topology</string>
+         <string>Algorithm analysis</string>
         </property>
        </widget>
-      </widget>
-      <widget class="QWidget" name="ring_topolog_tap">
-       <attribute name="title">
-        <string>Ring topology</string>
-       </attribute>
-       <widget class="QLabel" name="ring_topology_label">
+       <widget class="QPushButton" name="optimal_solution_btn">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>50</y>
-          <width>671</width>
-          <height>41</height>
+          <x>820</x>
+          <y>470</y>
+          <width>261</width>
+          <height>51</height>
          </rect>
         </property>
         <property name="text">
-         <string>Select the number of the nodes of ring topology graph:</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="select_number_of_nodes_ring">
-        <property name="geometry">
-         <rect>
-          <x>450</x>
-          <y>130</y>
-          <width>271</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <item>
-         <property name="text">
-          <string>number of nodes</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>4</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>5</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>6</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>7</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>8</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>9</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>10</string>
-         </property>
-        </item>
-       </widget>
-       <widget class="QWidget" name="add_light_path_Widget_ring" native="true">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>670</y>
-          <width>1201</width>
-          <height>131</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>16</pointsize>
-         </font>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <property name="spacing">
-          <number>50</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QComboBox" name="starting_node_ring">
-           <item>
-            <property name="text">
-             <string>starting node</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="ending_node_ring">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <item>
-            <property name="text">
-             <string>ending node</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="is_long_path">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>long path</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="add_light_ring">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>Add light path</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="verticalLayoutWidget_2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>170</y>
-          <width>761</width>
-          <height>481</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="ring_graph_layout"/>
-       </widget>
-       <widget class="QPlainTextEdit" name="ring_topology_plaintxt">
-        <property name="geometry">
-         <rect>
-          <x>780</x>
-          <y>170</y>
-          <width>391</width>
-          <height>481</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="plainText">
-         <string/>
+         <string>optimal solution</string>
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="path_topology_tab">
+      <widget class="QWidget" name="algorithm_simulation">
        <attribute name="title">
-        <string>Path topology</string>
+        <string>Algorithm simulation</string>
        </attribute>
-       <widget class="QLabel" name="apth_topology_label">
+       <widget class="QTabWidget" name="tabWidget_4">
         <property name="geometry">
          <rect>
-          <x>270</x>
-          <y>40</y>
-          <width>671</width>
-          <height>41</height>
+          <x>-4</x>
+          <y>-1</y>
+          <width>1191</width>
+          <height>791</height>
          </rect>
         </property>
-        <property name="text">
-         <string>Select the number of the nodes of path topology graph:</string>
+        <property name="tabPosition">
+         <enum>QTabWidget::South</enum>
         </property>
-       </widget>
-       <widget class="QComboBox" name="select_number_of_nodes_path">
-        <property name="geometry">
-         <rect>
-          <x>450</x>
-          <y>130</y>
-          <width>271</width>
-          <height>31</height>
-         </rect>
+        <property name="tabShape">
+         <enum>QTabWidget::Triangular</enum>
         </property>
-        <item>
-         <property name="text">
-          <string>number of nodes</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>4</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>5</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>6</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>7</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>8</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>9</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>10</string>
-         </property>
-        </item>
-       </widget>
-       <widget class="QWidget" name="add_light_path_Widget_path" native="true">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>670</y>
-          <width>1201</width>
-          <height>131</height>
-         </rect>
+        <property name="currentIndex">
+         <number>0</number>
         </property>
-        <property name="font">
-         <font>
-          <pointsize>16</pointsize>
-         </font>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <property name="spacing">
-          <number>50</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QComboBox" name="starting_node_path">
-           <item>
-            <property name="text">
-             <string>starting node</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="ending_node_path">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <item>
-            <property name="text">
-             <string>ending node</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="add_light_path">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
+        <widget class="QWidget" name="path_topology_tab">
+         <attribute name="title">
+          <string>Path topology</string>
+         </attribute>
+         <widget class="QPlainTextEdit" name="path_topology_plaintxt">
+          <property name="geometry">
+           <rect>
+            <x>11</x>
+            <y>510</y>
+            <width>1171</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="select_number_of_nodes_path">
+          <property name="geometry">
+           <rect>
+            <x>451</x>
+            <y>90</y>
+            <width>271</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <item>
            <property name="text">
-            <string>Add light path</string>
+            <string>number of nodes</string>
            </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="verticalLayoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>180</y>
-          <width>1171</width>
-          <height>351</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="path_graph_layout"/>
-       </widget>
-       <widget class="QPlainTextEdit" name="path_topology_plaintxt">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>550</y>
-          <width>1171</width>
-          <height>101</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QWidget" name="add_light_path_Widget_path" native="true">
+          <property name="geometry">
+           <rect>
+            <x>11</x>
+            <y>630</y>
+            <width>1171</width>
+            <height>121</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <property name="spacing">
+            <number>50</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QComboBox" name="starting_node_path">
+             <item>
+              <property name="text">
+               <string>starting node</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="ending_node_path">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <item>
+              <property name="text">
+               <string>ending node</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="add_light_path">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Add light path</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QLabel" name="apth_topology_label_3">
+          <property name="geometry">
+           <rect>
+            <x>271</x>
+            <y>0</y>
+            <width>671</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Select the number of the nodes of path topology graph:</string>
+          </property>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget_17">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>140</y>
+            <width>1171</width>
+            <height>351</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="path_graph_layout"/>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="ring_topolog_tap">
+         <attribute name="title">
+          <string>Ring topology</string>
+         </attribute>
+         <widget class="QWidget" name="add_light_path_Widget_ring" native="true">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>620</y>
+            <width>1161</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <property name="spacing">
+            <number>50</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QComboBox" name="starting_node_ring">
+             <item>
+              <property name="text">
+               <string>starting node</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="ending_node_ring">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <item>
+              <property name="text">
+               <string>ending node</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="is_long_path">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>clockwise</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="add_light_ring">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Add light path</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget_18">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>120</y>
+            <width>761</width>
+            <height>481</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="ring_graph_layout"/>
+         </widget>
+         <widget class="QLabel" name="ring_topology_label_3">
+          <property name="geometry">
+           <rect>
+            <x>260</x>
+            <y>0</y>
+            <width>671</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Select the number of the nodes of ring topology graph:</string>
+          </property>
+         </widget>
+         <widget class="QPlainTextEdit" name="ring_topology_plaintxt">
+          <property name="geometry">
+           <rect>
+            <x>780</x>
+            <y>120</y>
+            <width>391</width>
+            <height>481</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="plainText">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="select_number_of_nodes_ring">
+          <property name="geometry">
+           <rect>
+            <x>450</x>
+            <y>80</y>
+            <width>271</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>number of nodes</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+         </widget>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="analysis_tab">
@@ -938,7 +975,7 @@ p, li { white-space: pre-wrap; }
          <enum>QTabWidget::Triangular</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="optimal_sol_for_path_topology">
          <attribute name="title">
@@ -1561,7 +1598,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1210</width>
+     <width>1217</width>
      <height>21</height>
     </rect>
    </property>

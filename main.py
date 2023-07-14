@@ -76,10 +76,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.select_number_of_nodes_ring.currentTextChanged.connect(self.on_select_ring)
         self.my_tab = self.findChild(QtWidgets.QTabWidget, "tabWidget")
         self.my_tab.setCurrentIndex(0)
-        self.ring_topology_btn = self.findChild(QtWidgets.QPushButton, "ring_topology_btn")
-        self.path_topology_btn = self.findChild(QtWidgets.QPushButton, "path_topology_btn")
-        self.ring_topology_btn.clicked.connect(self.on_ring_topology_btn_clicked)
-        self.path_topology_btn.clicked.connect(self.on_path_topology_btn_clicked)
+        self.algorithm_simolution_btn = self.findChild(QtWidgets.QPushButton, "algorithm_simolution_btn")
+        self.algorithm_analysis_btn = self.findChild(QtWidgets.QPushButton, "algorithm_analysis_btn")
+        self.algorithm_simolution_btn.clicked.connect(self.on_algorithm_simolution_btn_clicked)
+        self.algorithm_analysis_btn.clicked.connect(self.on_algorithm_analysis_btn_clicked)
+
+        self.optimal_solution_btn = self.findChild(QtWidgets.QPushButton, "optimal_solution_btn")
+        self.optimal_solution_btn.clicked.connect(self.on_optimal_solution_btn_clicked)
 
         self.path_graph_layout = self.findChild(QtWidgets.QVBoxLayout, "path_graph_layout")
         self.ring_graph_layout = self.findChild(QtWidgets.QVBoxLayout, "ring_graph_layout")
@@ -303,7 +306,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     colors.append("lightcoral")
 
             self.ring_analysis_ax.scatter(x, y, z, s=50, c=colors)
-            txt = f"max ratio: {max_z}, average ratio: {avg_z}"
+            txt = f"max ratio: {round(max_z, 2)}, average ratio: {round(avg_z, 2)}"
             self.ring_analysis_label.setText(txt)
         file.close()
         self.cycle_graph_analysis_layout.addWidget(self.ring_analysis_canvas)
@@ -337,7 +340,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     colors.append("lightcoral")
 
             self.path_analysis_ax.scatter(x, y, z, s=50, c=colors)
-            txt = f"max ratio: {max_z}, average ratio: {avg_z}"
+            txt = f"max ratio: {round(max_z,2)}, average ratio: {round(avg_z,2)}"
             self.path_analysis_label.setText(txt)
         file.close()
         self.path_graph_analysis_layout.addWidget(self.path_analysis_canvas)
@@ -393,7 +396,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         if self.next_online_path_topology == len(self.paths_path_topology) - 1:
             cr = sum(self.online_path_topology_algorithm.adm) / sum(self.optimal_path_topology_algorithm.adm)
             text = self.online_path_sol_info_label.text()
-            self.online_path_sol_info_label.setText(f"{text}, competitive ratio= {cr}")
+            self.online_path_sol_info_label.setText(f"{text}, competitive ratio= {round(cr, 2)}")
         self.next_online_path_topology += 1
 
     def add_all_paths_to_online_path_topology(self):
@@ -410,7 +413,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             count += 1
         cr = sum(self.online_path_topology_algorithm.adm) / sum(self.optimal_path_topology_algorithm.adm)
         text = self.online_path_sol_info_label.text()
-        self.online_path_sol_info_label.setText(f"{text}, competitive ratio= {cr}")
+        self.online_path_sol_info_label.setText(f"{text}, competitive ratio= {round(cr, 2)}")
         self.next_online_path_topology = len(paths)
 
     def restart_online_path_graph(self):
@@ -477,7 +480,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         if self.next_online_ring_topology == len(self.paths_ring_topology) - 1:
             cr = sum(self.online_ring_topology_algorithm.adm) / sum(self.optimal_ring_topology_algorithm.adm)
             text = self.online_ring_sol_info.toPlainText()
-            self.online_ring_sol_info.setPlainText(f"{text}, competitive ratio= {cr}")
+            self.online_ring_sol_info.setPlainText(f"{text}, competitive ratio= {round(cr, 2)}")
         self.next_online_ring_topology += 1
 
     def add_all_paths_to_online_ring_topology(self):
@@ -492,7 +495,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 f",\ntotal ADMs= {sum(self.online_ring_topology_algorithm.adm)} ")
         cr = sum(self.online_ring_topology_algorithm.adm) / sum(self.optimal_ring_topology_algorithm.adm)
         text = self.online_ring_sol_info.toPlainText()
-        self.online_ring_sol_info.setPlainText(f"{text}, competitive ratio= {cr}")
+        self.online_ring_sol_info.setPlainText(f"{text}, competitive ratio= {round(cr, 2)}")
         self.next_online_ring_topology = len(paths)
 
     def restart_online_ring_graph(self):
@@ -662,7 +665,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.ring_analysis_ax.scatter(x, y, z, s=50, c='red')
             else:
                 self.ring_analysis_ax.scatter(x, y, z, s=50, c="#FF9999")
-            txt = f"max ratio: {max_z}, average ratio: {avg_z}"
+            txt = f"max ratio: {round(max_z, 2)}, average ratio: {round(avg_z, 2)}"
             self.ring_analysis_label.setText(txt)
         else:
             self.ring_analysis_ax.scatter(x, y, z, s=50, c='red')
@@ -703,11 +706,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         text2 = self.number_of_paths_cycle_graph_analysis.toPlainText().strip()
         self.create_cycle_graph_btn.setEnabled(bool(text1) and bool(text2))
 
-    def on_ring_topology_btn_clicked(self):
+    def on_algorithm_simolution_btn_clicked(self):
         self.my_tab.setCurrentIndex(1)
 
-    def on_path_topology_btn_clicked(self):
+    def on_algorithm_analysis_btn_clicked(self):
         self.my_tab.setCurrentIndex(2)
+
+    def on_optimal_solution_btn_clicked(self):
+        self.my_tab.setCurrentIndex(3)
 
     def on_select_path(self):
         self.ending_node_path.setEnabled(False)
@@ -867,25 +873,20 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.optimal_path_topology_canvas.draw()
         self.optimal_path_graph_layout.update()
 
+    def list_in_clockwise_order(self, start, end):
+        number_of_nodes = self.number_of_nodes_in_ring_topology
+        if start < end:
+            clockwise_list = list(range(start, end + 1))
+        else:
+            clockwise_list = list(range(start, number_of_nodes + 1)) + list(range(1, end + 1))
+        return clockwise_list
+
     def on_press_add_light_ring(self):
         start_node = int(self.starting_node_ring.currentText())
         end_node = int(self.ending_node_ring.currentText())
-        if start_node > end_node:
-            start_node, end_node = end_node, start_node
-        path1 = list(range(start_node, end_node + 1))
-        path2 = list()
-        for i in range(end_node, int(self.select_number_of_nodes_ring.currentText()) + 1):
-            path2.append(i)
-        for i in range(1, start_node + 1):
-            path2.append(i)
-        short_path = path1
-        long_path = path2
-        if len(short_path) > len(long_path):
-            short_path, long_path = long_path, short_path
         if self.is_long_path.isChecked():
-            self.ring_topology_algorithm.add_light_path(long_path)
-        else:
-            self.ring_topology_algorithm.add_light_path(short_path)
+            start_node, end_node = end_node, start_node
+        self.ring_topology_algorithm.add_light_path(self.list_in_clockwise_order(start_node, end_node))
         path = self.ring_topology_algorithm.paths[-1]
         color = self.ring_topology_algorithm.path_colour[-1]
         for i in range(len(self.ring_topology_algorithm.colours)):
