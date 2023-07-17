@@ -629,7 +629,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             else:
                 self.path_analysis_ax.scatter(x, y, z, s=50, c="lightcoral")
 
-            txt = f"max ratio: {max_z}, average ratio: {avg_z}"
+            txt = f"max ratio: {round(max_z, 2)}, average ratio: {round(avg_z, 2)}"
             self.path_analysis_label.setText(txt)
         else:
             self.path_analysis_ax.scatter(x, y, z, s=50, c='red')
